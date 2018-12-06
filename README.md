@@ -17,4 +17,6 @@ Contiene mi librería de CSS [**Ligne css**](https://itsalb3rt.github.io/lignecs
 
 # Demo
 
-![demo](https://i.imgur.com/3eIGa0U.png "demo")
+[**LIVE DEMO**](https://itsalb3rt.github.io/taskapp_localstorage_vuejs/index.html "LIVE DEMO")
+
+[![](https://i.imgur.com/3eIGa0U.png)](https://itsalb3rt.github.io/taskapp_localstorage_vuejs/index.html)

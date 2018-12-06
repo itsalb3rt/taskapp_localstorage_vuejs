@@ -15,7 +15,7 @@
                 <h1 v-else>Crear una tarea</h1>
                 <div>
                     <div class="input-group">
-                        <textarea cols="45" rows="5" v-model="newTask" placeholder="Sacar la basura hoy..."></textarea>
+                        <textarea cols="45" rows="5" v-model="newTask" placeholder="Escribe aquí tu tarea, cuanto termines pulsa el boton agregar..."></textarea>
                     </div>
                     <div>
                         <button class="button hollow primary" v-on:click="appTask"><i class="fa fa-plus-circle"></i>&Tab;Agregar</button>
@@ -31,8 +31,8 @@
                 <h1 v-else>No hay tareas registradas</h1>
                 <div class="panel bordered">
                     <div class="head"></div>
-                    <div class="body">
-                        <div class="input-group text small">
+                    <div class="body text small">
+                        <div class="input-group ">
                             <input type="text" placeholder="Buscar tarea..." v-model="searchValue">
                         </div>
                         <br>

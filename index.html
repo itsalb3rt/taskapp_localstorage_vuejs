@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop - VUE</title>
+    <link rel="stylesheet" href="css/ligne.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+<div id="appvue">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5">
+                <h1 v-if="taskList.length > 0"><i class="fa fa-sticky-note-o"></i>&Tab;Agregar una tarea</h1>
+                <h1 v-else>Crear una tarea</h1>
+                <div>
+                    <div class="input-group">
+                        <textarea cols="45" rows="5" v-model="newTask" placeholder="Sacar la basura hoy..."></textarea>
+                    </div>
+                    <div>
+                        <button class="button hollow primary" v-on:click="appTask"><i class="fa fa-plus-circle"></i>&Tab;Agregar</button>
+                    </div>
+                    <br>
+                    <div v-if="message">
+                        <a href="#" class="important undecoration danger">{{message}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <h1 v-if="taskList.length > 0"><i class="fa fa-list"></i>&Tab;Listado de tareas</h1>
+                <h1 v-else>No hay tareas registradas</h1>
+                <div class="panel bordered">
+                    <div class="head"></div>
+                    <div class="body">
+                        <div class="input-group text small">
+                            <input type="text" placeholder="Buscar tarea..." v-model="searchValue">
+                        </div>
+                        <br>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>TASK</th>
+                                <th>FECHA CREADA</th>
+                                <th>FECHA COMPLETADO</th>
+                                <th>ACCION</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr
+                                    v-for="item in filterTasks"
+                                    v-bind:style="item.completed == true ? 'cursor: not-allowed;opacity:0.5;background-color: rgba(0, 0, 0, .05);' : '' ">
+                                <td>
+                                    {{item.task}}
+                                </td>
+                                <td>
+                                    {{item.create_at}}
+                                </td>
+                                <td>
+                                    {{item.complete_at}}
+                                </td>
+                                <td>
+                                    <button class="button success hollow tiny"
+                                            v-on:click="completeTask(item.id)">
+                                        <span v-if="!item.completed">
+                                            <i class="fa fa-check"></i>&Tab;Completar
+                                        </span>
+                                        <span v-else>
+                                            reactivar
+                                        </span>
+                                    </button>
+                                    <button class="button danger hollow tiny"
+                                            v-on:click="removeTask(item.id)"><i class="fa fa-remove"></i>&Tab;Eliminar</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr>
+            </div>
+        </div>
+        <div class="row center-lg">
+            <div class="col-lg-12">
+                <nav>
+                    <ul class="horizontal-nav grey" style="background-color: transparent!important;border: none!important;">
+                        <li class="right">
+                            <a href="https://github.com/itsalb3rt" class="important primary undecoration"><i class="fa fa-copyright"></i>&Tab;Albert Eduardo Hidalgo Taveras</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

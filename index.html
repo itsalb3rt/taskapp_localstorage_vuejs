@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskApp - VUE</title>
     <link rel="stylesheet" href="css/ligne.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -10,12 +11,12 @@
 <div id="appvue">
     <div class="container">
         <div class="row">
-            <div class="col-xs-5">
+            <div class="col-lg-12">
                 <h1 v-if="taskList.length > 0"><i class="fa fa-sticky-note-o"></i>&Tab;Agregar una tarea</h1>
                 <h1 v-else>Crear una tarea</h1>
                 <div>
                     <div class="input-group">
-                        <textarea cols="45" rows="5" v-model="newTask" placeholder="Escribe aquí tu tarea, cuanto termines pulsa el boton agregar..."></textarea>
+                        <textarea cols="70" rows="5" v-model="newTask" placeholder="Escribe aquí tu tarea, cuanto termines pulsa el boton agregar..."></textarea>
                     </div>
                     <div>
                         <button class="button hollow primary" v-on:click="appTask"><i class="fa fa-plus-circle"></i>&Tab;Agregar</button>
@@ -26,7 +27,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-7">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
                 <h1 v-if="taskList.length > 0"><i class="fa fa-list"></i>&Tab;Listado de tareas</h1>
                 <h1 v-else>No hay tareas registradas</h1>
                 <div class="panel bordered">

@@ -1,6 +1,6 @@
 # TaskApp con Vuejs
 
-App de tareas personales sencilla usando VUEJS, sin bases de datos, sin conexión a servidor externo, solo el localstorage del navegador
+App de tareas personales sencilla usando VUEJS, sin bases de datos, sin conexión a servidor externo, solo el **localstorage** del navegador
 
 **¿Qué puedes hacer?**
 
@@ -9,7 +9,7 @@ App de tareas personales sencilla usando VUEJS, sin bases de datos, sin conexió
 - Eliminar tareas
 - Cerrar tu navegador y volver abrirlo en otro momento para continuar
 
-**Requisitos **
+**Requisitos**
 - No requiere nada especial, descargar y abrir el index.html
 
 **¿Qué contiene?**
